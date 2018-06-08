@@ -2,11 +2,11 @@
 laravalue-admin is a admin panel for customizable teamwork management system, which can help you to build form and workflow without coding.
 
 ## Plan
-- [ ] Panel base AdminLte and Html(laravelcollective) with Localization
+- [ ] Panel base AdminLte and Html Form & Grid
 - [ ] EAV(entity attribute value) model Form Builder 
 - [ ] List with Filter and Cache base Repositories and Datatable
 - [ ] User/Role/Permission and Team management base laratrust
-- [ ] Setting / Menu and bradcrumb management
+- [ ] Setting / Menu and breadcrumbs management
 - [ ] Media and image management with local and clouds
 - [ ] Wechart integration and H5 views
 - [ ] Workflow integration base BPMN 2.0
@@ -25,5 +25,6 @@ laravalue-admin is a admin panel for customizable teamwork management system, wh
 - [ ] Tracker/Analysis integration
 - [ ] SNS teamwork panel integration
 - [ ] GeoIP/cookie-consent and other template integration
-- [ ] Installer package
+- [ ] Localization integration
 - [ ] Redis integration
+- [ ] Installer package

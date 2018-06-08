@@ -1,0 +1,8 @@
+input.content {
+    min-height: 0 !important;
+    padding: 6px 12px !important;
+    margin: 0 !important;
+}
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td{
+    min-width: 150px;
+}
