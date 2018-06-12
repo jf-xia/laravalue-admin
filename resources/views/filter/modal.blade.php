@@ -13,7 +13,7 @@
                 </button>
                 <h4 class="modal-title" id="myModalLabel">{{ trans('admin.filter') }}</h4>
             </div>
-            <form action="{!! $action !!}" method="get" pjax-container>
+            <form action="{!! $action !!}" method="get" >
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary submit">{{ trans('admin.submit') }}</button>
                     <button type="reset" class="btn btn-warning pull-left">{{ trans('admin.reset') }}</button>
