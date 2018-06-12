@@ -54,10 +54,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Vreap\\Admin\\EavServiceProvider"
+                "Vreap\\Lva\\LvaServiceProvider"
             ],
             "aliases": {
-                "Eav": "Vreap\\Admin\\Facades\\Admin"
+                "Eav": "Vreap\\Lva\\Facades\\Lva"
             }
 
         }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Vreap\Admin;
+namespace Vreap\Lav;
 
 use Closure;
 use Illuminate\Database\Eloquent\Model as EloquentModel;
@@ -12,7 +12,7 @@ use InvalidArgumentException;
 /**
  * Class Eav.
  */
-class Admin
+class Lav
 {
     /**
      * @var Navbar
@@ -65,9 +65,9 @@ class Admin
     public function registerAuthRoutes()
     {
         $attributes = [
-            'prefix'     => config('admin.route.prefix'),
-            'namespace'  => 'Vreap\Eav\Controllers',
-            'middleware' => config('admin.route.middleware'),
+            'prefix'     => config('lva.route.prefix'),
+            'namespace'  => 'Vreap\Controllers',
+            'middleware' => config('lva.route.middleware'),
         ];
 
         Route::group($attributes, function ($router) {
@@ -83,11 +83,6 @@ class Admin
 //                $router->resource('auth/logs', 'LogController', ['only' => ['index', 'destroy']]);
             });
 
-            $router->get('auth/login', 'AuthController@getLogin');
-            $router->post('auth/login', 'AuthController@postLogin');
-            $router->get('auth/logout', 'AuthController@getLogout');
-            $router->get('auth/setting', 'AuthController@getSetting');
-            $router->put('auth/setting', 'AuthController@putSetting');
         });
     }
 

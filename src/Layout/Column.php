@@ -1,6 +1,6 @@
 <?php
 
-namespace Vreap\Admin\Layout;
+namespace Vreap\Lav\Layout;
 
 use Illuminate\Contracts\Support\Renderable;
 

@@ -2,12 +2,12 @@
 
 use Illuminate\Routing\Router;
 
-Admin::registerAuthRoutes();
+Lva::registerAuthRoutes();
 
 Route::group([
-    'prefix'        => config('admin.route.prefix'),
-    'namespace'     => config('admin.route.namespace'),
-    'middleware'    => config('admin.route.middleware'),
+    'prefix'        => config('lva.route.prefix'),
+    'namespace'     => config('lva.route.namespace'),
+    'middleware'    => config('lva.route.middleware'),
 ], function (Router $router) {
 
     $router->get('/', 'HomeController@index');

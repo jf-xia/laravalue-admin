@@ -1,9 +1,9 @@
 <?php
 
-namespace Encore\Admin\Middleware;
+namespace Vreap\Lva\Middleware;
 
-use Encore\Admin\Auth\Database\OperationLog as OperationLogModel;
-use Encore\Admin\Facades\Admin;
+use Vreap\Lva\Auth\Database\OperationLog as OperationLogModel;
+use Vreap\Lva\Facades\Lva;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Str;
@@ -31,7 +31,7 @@ class LogOperation
         }
         if ($this->shouldLogOperation($request)) {
             $log = [
-                'user_id' => Admin::user()->id,
+                'user_id' => Lva::user()->id,
                 'path'    => $request->path(),
                 'method'  => $request->method(),
                 'ip'      => $request->getClientIp(),
@@ -71,9 +71,9 @@ class LogOperation
      */
     protected function shouldLogOperation(Request $request)
     {
-        return config('admin.operation_log.enable')
+        return config('lva.operation_log.enable')
             && !$this->inExceptArray($request)
-            && Admin::user();
+            && Lva::user();
     }
 
     /**
@@ -85,7 +85,7 @@ class LogOperation
      */
     protected function inExceptArray($request)
     {
-        foreach (config('admin.operation_log.except') as $except) {
+        foreach (config('lva.operation_log.except') as $except) {
             if ($except !== '/') {
                 $except = trim($except, '/');
             }

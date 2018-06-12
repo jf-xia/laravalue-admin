@@ -1,6 +1,6 @@
 <?php
 
-namespace Vreap\Admin\Layout;
+namespace Vreap\Lav\Layout;
 
 use Closure;
 use Illuminate\Contracts\Support\Renderable;
@@ -203,7 +203,7 @@ class Content implements Renderable
             'content'     => $this->build(),
         ];
 
-        return view('admin::content', $items)->render();
+        return view('lva::content', $items)->render();
     }
 
     /**

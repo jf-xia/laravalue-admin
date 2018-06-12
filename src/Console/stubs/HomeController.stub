@@ -3,17 +3,17 @@
 namespace DummyNamespace;
 
 use App\Http\Controllers\Controller;
-use Vreap\Admin\Controllers\Dashboard;
-use Vreap\Admin\Facades\Admin;
-use Vreap\Admin\Layout\Column;
-use Vreap\Admin\Layout\Content;
-use Vreap\Admin\Layout\Row;
+use Vreap\Lva\Controllers\Dashboard;
+use Vreap\Lva\Facades\Lva;
+use Vreap\Lva\Layout\Column;
+use Vreap\Lva\Layout\Content;
+use Vreap\Lva\Layout\Row;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        return Admin::content(function (Content $content) {
+        return Lva::content(function (Content $content) {
 
             $content->header('Dashboard');
             $content->description('Description...');

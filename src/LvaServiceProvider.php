@@ -1,14 +1,14 @@
 <?php
 
-namespace Vreap\Admin;
+namespace Vreap\Lav;
 
 use Illuminate\Support\ServiceProvider;
 
-class AdminServiceProvider extends ServiceProvider
+class LavServiceProvider extends ServiceProvider
 {
     protected $commands = [
-        \Vreap\Admin\Console\InstallCommand::class,
-        \Vreap\Admin\Console\UninstallCommand::class,
+        \Vreap\Lav\Console\InstallCommand::class,
+        \Vreap\Lav\Console\UninstallCommand::class,
     ];
     /**
      * The application's route middleware.
@@ -16,7 +16,7 @@ class AdminServiceProvider extends ServiceProvider
      * @var array
      */
     protected $routeMiddleware = [
-        'admin.log'        => \Encore\Admin\Middleware\LogOperation::class,
+        'lva.log'        => \Vreap\Lva\Middleware\LogOperation::class,
     ];
 
     /**
@@ -25,8 +25,8 @@ class AdminServiceProvider extends ServiceProvider
      * @var array
      */
     protected $middlewareGroups = [
-        'admin' => [
-            'admin.log',
+        'lva' => [
+            'lva.log',
         ],
     ];
 
@@ -37,18 +37,18 @@ class AdminServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'admin');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'lva');
 
-        if (file_exists($routes = admin_path('routes.php'))) {
+        if (file_exists($routes = lva_path('routes.php'))) {
             $this->loadRoutesFrom($routes);
         }
 
         if ($this->app->runningInConsole()) {
-            $this->publishes([__DIR__.'/../config' => config_path()], 'laravalue-admin-config');
-            $this->publishes([__DIR__.'/../resources/lang' => resource_path('lang')], 'laravalue-admin-lang');
-//            $this->publishes([__DIR__.'/../resources/views' => resource_path('views/admin')],           'laravel-admin-views');
-            $this->publishes([__DIR__.'/../database/migrations' => database_path('migrations')], 'laravalue-admin-migrations');
-            $this->publishes([__DIR__.'/../resources/assets' => public_path('vendor/laravel-admin')], 'laravalue-admin-assets');
+            $this->publishes([__DIR__.'/../config' => config_path()], 'lva-config');
+            $this->publishes([__DIR__.'/../resources/lang' => resource_path('lang')], 'lva-lang');
+//            $this->publishes([__DIR__.'/../resources/views' => resource_path('views/lva')],'lva-views');
+            $this->publishes([__DIR__.'/../database/migrations' => database_path('migrations')], 'lva-migrations');
+            $this->publishes([__DIR__.'/../resources/assets' => public_path('vendor/laravel-lva')], 'lva-assets');
         }
     }
 
@@ -59,7 +59,7 @@ class AdminServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->loadAdminAuthConfig();
+        $this->loadLvaAuthConfig();
 
         $this->registerRouteMiddleware();
 
@@ -71,9 +71,9 @@ class AdminServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    protected function loadAdminAuthConfig()
+    protected function loadLvaAuthConfig()
     {
-        config(array_dot(config('admin.auth', []), 'auth.'));
+        config(array_dot(config('lva.auth', []), 'auth.'));
     }
 
     /**

@@ -1,5 +1,19 @@
 <?php
 
+if (!function_exists('lva_path')) {
+
+    /**
+     * Get lva path.
+     *
+     * @param string $path
+     *
+     * @return string
+     */
+    function lva_path($path = '')
+    {
+        return ucfirst(config('lva.directory')).($path ? DIRECTORY_SEPARATOR.$path : $path);
+    }
+}
 
 if (!function_exists('message_toastr')) {
 
