@@ -2,7 +2,8 @@
 
 namespace Vreap\Lva\Console;
 
-use Vreap\Lva\Auth\Database\Administrator;
+use App\Permission;
+use App\Team;
 use Illuminate\Console\Command;
 
 class InstallCommand extends Command
@@ -37,7 +38,21 @@ class InstallCommand extends Command
     {
         $this->initDatabase();
 
-        $this->initLvaDirectory();
+        $this->initLaratrust();
+
+//        $this->initLvaDirectory();
+    }
+
+    public function initLaratrust()
+    {
+        $this->call('laratrust:setup');
+        $this->call('laratrust:seeder');
+        if (!class_exists(Team::class)) $this->call('laratrust:setup-teams');
+        $this->call('migrate');
+        if (Permission::count() == 0) {
+            $this->call('db:seed', ['--class' => \LaratrustSeeder::class]);
+        }
+
     }
 
     /**
@@ -49,9 +64,9 @@ class InstallCommand extends Command
     {
         $this->call('migrate');
 
-        if (Lvaistrator::count() == 0) {
-            $this->call('db:seed', ['--class' => \Vreap\Lva\Auth\Database\LvaTablesSeeder::class]);
-        }
+//        if (Lvaistrator::count() == 0) {
+//            $this->call('db:seed', ['--class' => \Vreap\Lva\Auth\Database\LvaTablesSeeder::class]);
+//        }
     }
 
     /**
