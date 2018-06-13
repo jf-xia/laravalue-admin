@@ -1,8 +1,8 @@
 <?php
 
-namespace Vreap\Lav\Console;
+namespace Vreap\Lva\Console;
 
-use Vreap\Lav\Auth\Database\Administrator;
+use Vreap\Lva\Auth\Database\Administrator;
 use Illuminate\Console\Command;
 
 class InstallCommand extends Command
@@ -50,7 +50,7 @@ class InstallCommand extends Command
         $this->call('migrate');
 
         if (Lvaistrator::count() == 0) {
-            $this->call('db:seed', ['--class' => \Vreap\Lav\Auth\Database\LvaTablesSeeder::class]);
+            $this->call('db:seed', ['--class' => \Vreap\Lva\Auth\Database\LvaTablesSeeder::class]);
         }
     }
 

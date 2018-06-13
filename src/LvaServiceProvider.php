@@ -1,14 +1,14 @@
 <?php
 
-namespace Vreap\Lav;
+namespace Vreap\Lva;
 
 use Illuminate\Support\ServiceProvider;
 
-class LavServiceProvider extends ServiceProvider
+class LvaServiceProvider extends ServiceProvider
 {
     protected $commands = [
-        \Vreap\Lav\Console\InstallCommand::class,
-        \Vreap\Lav\Console\UninstallCommand::class,
+        \Vreap\Lva\Console\InstallCommand::class,
+        \Vreap\Lva\Console\UninstallCommand::class,
     ];
     /**
      * The application's route middleware.

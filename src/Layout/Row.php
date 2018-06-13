@@ -1,6 +1,6 @@
 <?php
 
-namespace Vreap\Lav\Layout;
+namespace Vreap\Lva\Layout;
 
 class Row implements Buildable
 {

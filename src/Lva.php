@@ -1,6 +1,6 @@
 <?php
 
-namespace Vreap\Lav;
+namespace Vreap\Lva;
 
 use Closure;
 use Illuminate\Database\Eloquent\Model as EloquentModel;
@@ -12,7 +12,7 @@ use InvalidArgumentException;
 /**
  * Class Eav.
  */
-class Lav
+class Lva
 {
     /**
      * @var Navbar

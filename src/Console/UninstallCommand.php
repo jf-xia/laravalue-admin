@@ -1,6 +1,6 @@
 <?php
 
-namespace Vreap\Lav\Console;
+namespace Vreap\Lva\Console;
 
 use Illuminate\Console\Command;
 

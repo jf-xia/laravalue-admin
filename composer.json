@@ -57,7 +57,7 @@
                 "Vreap\\Lva\\LvaServiceProvider"
             ],
             "aliases": {
-                "Eav": "Vreap\\Lva\\Facades\\Lva"
+                "Lva": "Vreap\\Lva\\Facades\\Lva"
             }
 
         }

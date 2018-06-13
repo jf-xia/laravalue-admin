@@ -1,6 +1,6 @@
 <?php
 
-namespace Vreap\Lav\Facades;
+namespace Vreap\Lva\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
@@ -24,6 +24,6 @@ class Lva extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return \Vreap\Lav\Lva::class;
+        return \Vreap\Lva\Lva::class;
     }
 }
