@@ -36,7 +36,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Vreap\\Admin\\": "src/"
+            "Vreap\\Lva\\": "src/"
         },
         "files": [
             "src/helpers.php"
